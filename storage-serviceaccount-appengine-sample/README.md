@@ -22,7 +22,7 @@ https://help.github.com/articles/set-up-git).
 
     cd [someDirectory]
     git clone https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples.git
-    cd storage-serviceaccount-appengine-sample
+    cd cloud-storage-docs-xml-api-examples/storage-serviceaccount-appengine-sample
     mvn clean package
 
 To enable logging of HTTP requests and responses (highly recommended when 
