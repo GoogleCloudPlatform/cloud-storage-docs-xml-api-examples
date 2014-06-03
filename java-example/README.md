@@ -1,35 +1,34 @@
-Instructions for Using the Service Account Command Line Sample
+Using the Service Account Command Line Sample
 ==============================================================
 
-#Browse Online
+##Browse Online
 
-The main files is [StorageServiceAccountSample.java](https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples/blob/master/java-example/src/main/java/StorageServiceAccountSample.java).
+The main file is [StorageServiceAccountSample.java](https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples/blob/master/java-example/src/main/java/StorageServiceAccountSample.java).
 
-#Get a Service Account
+##Get a Service Account
 
 See the instructions at https://developers.google.com/storage/docs/xml-api-java-samples
 for setting up a service account.
 
-#Checkout Instructions
+##Checkout Instructions
 
-**Prerequisites:** install the latest version of [Java](http//java.com) and [Maven](http://maven.apache.org/download.html). You must also be able to work with GitHub from
-the terminal (see
+**Prerequisites:** install the latest version of [Java](http//java.com) and [Maven](http://maven.apache.org/download.html). You must also be able to work with qcGitHub repository (see e.g.,
 https://help.github.com/articles/set-up-git).
 
 You may need to set your `JAVA_HOME`.
 
-cd *[someDirectory]*
-git clone https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples.git
-cd storage-serviceaccount-cmdline-sample
-*Update* key.p12 file
-[editor] src/main/java/com/google/api/services/samples/storage/serviceaccount/cmdline/StorageServiceAccountSample.java
-mvn compile:install
-mvn -q exec:java
+- cd *[someDirectory]*
+- git clone https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples.git
+- cd storage-serviceaccount-cmdline-sample
+- *Update* key.p12 file
+- [editor] src/main/java/com/google/api/services/samples/storage/serviceaccount/cmdline/StorageServiceAccountSample.java
+- mvn compile:install
+- mvn -q exec:java
 
 To enable logging of HTTP requests and responses (highly recommended when 
 developing), please take a look at logging.properties.
 
-#Setup Project in Eclipse
+##Set Up a Project in Eclipse
 
 **Prerequisites:** install [Eclipse](http://www.eclipse.org/downloads/), the [Maven plugin](http://m2eclipse.sonatype.org/installing-m2eclipse.html), and optionally the 
 [GitHub plugin](http://eclipse.github.com/).
