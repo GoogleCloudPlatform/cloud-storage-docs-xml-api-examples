@@ -6,8 +6,8 @@ Browse Online
 
 The main file is [StorageSample.java](TBD). 
 
-Get a Service Account
----------------------
+Add Your App Engine Service Account to the Team
+-----------------------------------------------
 
 See the instructions at https://developers.google.com/storage/docs/xml-api-java-samples
 for setting up a service account.
