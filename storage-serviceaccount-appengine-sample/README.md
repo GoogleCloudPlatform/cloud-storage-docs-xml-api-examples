@@ -35,3 +35,20 @@ To run your application locally on a development server:
 
     mvn appengine:devserver
 
+To deploy your application to appspot.com:
+
+If this is the first time you are deploying your application to appspot.com, you will to perform the following steps first.
+
+- Go to https://appengine.google.com and create an application.
+- Edit src/main/webapp/WEB-INF/appengine-web.xml, and enter the unique application identifier (you chose it in the prior step) between the <application> tags.
+
+If you've done the above, you can deploy at any time:
+
+    mvn appengine:update
+    
+If this is the first time you have run "update" on the project, a browser window will open prompting you to log in. Log in with the same Google account the app is registered with.
+
+Set Up a Project in Eclipse
+---------------------------
+
+...coming soon...
