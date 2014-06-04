@@ -74,6 +74,7 @@ public class StorageServiceAccountSample {
         String p12Content = Files.readFirstLine(new File("key.p12"), Charset.defaultCharset());
         Preconditions.checkArgument(!p12Content.startsWith("Please"), p12Content);
 
+        //[START snippet]
         // Build service account credential.
         GoogleCredential credential = new GoogleCredential.Builder().setTransport(httpTransport)
             .setJsonFactory(JSON_FACTORY)
@@ -89,6 +90,7 @@ public class StorageServiceAccountSample {
         HttpRequest request = requestFactory.buildGetRequest(url);
         HttpResponse response = request.execute();
         String content = response.parseAsString();
+       //[END snippet]
 
         // Instantiate transformer input
         Source xmlInput = new StreamSource(new StringReader(content));
