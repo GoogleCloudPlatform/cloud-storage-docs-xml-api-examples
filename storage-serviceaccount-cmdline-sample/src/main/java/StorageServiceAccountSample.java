@@ -63,7 +63,7 @@ public class StorageServiceAccountSample {
     try {
       try {
         httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-        // check for valid setup
+        // Check for valid setup.
         Preconditions.checkArgument(!SERVICE_ACCOUNT_EMAIL.startsWith("[["),
             "Please enter your service account e-mail from the Google APIs "
             + "Console to the SERVICE_ACCOUNT_EMAIL constant in %s",
@@ -75,7 +75,7 @@ public class StorageServiceAccountSample {
         Preconditions.checkArgument(!p12Content.startsWith("Please"), p12Content);
 
         //[START snippet]
-        // Build service account credential.
+        // Build a service account credential.
         GoogleCredential credential = new GoogleCredential.Builder().setTransport(httpTransport)
             .setJsonFactory(JSON_FACTORY)
             .setServiceAccountId(SERVICE_ACCOUNT_EMAIL)
@@ -83,7 +83,7 @@ public class StorageServiceAccountSample {
             .setServiceAccountPrivateKeyFromP12File(new File("key.p12"))
             .build();
 
-        // Set up and execute Google Cloud Storage request.
+        // Set up and execute a Google Cloud Storage request.
         String URI = "https://storage.googleapis.com/" + BUCKET_NAME;
         HttpRequestFactory requestFactory = httpTransport.createRequestFactory(credential);
         GenericUrl url = new GenericUrl(URI);
@@ -92,11 +92,11 @@ public class StorageServiceAccountSample {
         String content = response.parseAsString();
        //[END snippet]
 
-        // Instantiate transformer input
+        // Instantiate transformer input.
         Source xmlInput = new StreamSource(new StringReader(content));
         StreamResult xmlOutput = new StreamResult(new StringWriter());
 
-        // Configure transformer
+        // Configure transformer.
         Transformer transformer = TransformerFactory.newInstance().newTransformer(); // An identity
                                                                                      // transformer
         transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "testing.dtd");
