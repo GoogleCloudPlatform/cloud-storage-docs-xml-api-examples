@@ -20,13 +20,19 @@ https://help.github.com/articles/set-up-git).
 
 You may need to set your `JAVA_HOME`.
 
-    cd [someDirectory]
-    git clone https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples.git
-    cd cloud-storage-docs-xml-api-examples/storage-serviceaccount-cmdline-sample
-    Update key.p12 file
-    [editor] src/main/java/com/google/api/services/samples/storage/serviceaccount/cmdline/StorageServiceAccountSample.java
-    mvn compile:install
-    mvn -q exec:java
+1. Clone repository.
+
+        cd [someDirectory]
+        git clone https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples.git
+        cd cloud-storage-docs-xml-api-examples/storage-serviceaccount-cmdline-sample
+
+2. Update key.p12 file.
+3. Edit `StorageServiceAccountSample.java` to add your bucket and service account email.
+4. Compile and run
+
+        mvn compile install
+        mvn -q exec:java
+
 
 To enable logging of HTTP requests and responses (highly recommended when 
 developing), please take a look at logging.properties.
