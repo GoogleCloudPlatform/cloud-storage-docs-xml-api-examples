@@ -4,13 +4,13 @@ Using the Service Account App Engine Sample
 Browse Online
 -------------
 
-The main file is [StorageSample.java](TBD). 
+The main code file is [StorageSample.java](https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples/blob/master/storage-serviceaccount-cmdline-sample/src/main/java/StorageServiceAccountSample.java). 
 
-Add Your App Engine Service Account to the Team
------------------------------------------------
+Add Your App Engine Service Account Name to the Project Team
+------------------------------------------------------------
 
 See the instructions at https://developers.google.com/storage/docs/xml-api-java-samples
-for setting up a service account.
+for getting your App Engine Service Account Name and adding it to your project team.
 
 Checkout Instructions
 ---------------------
