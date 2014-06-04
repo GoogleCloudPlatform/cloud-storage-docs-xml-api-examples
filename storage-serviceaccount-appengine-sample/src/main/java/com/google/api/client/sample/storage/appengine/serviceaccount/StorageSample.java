@@ -64,6 +64,7 @@ public class StorageSample extends HttpServlet {
         return;
       }
       // Remove any trailing slashes, if found.
+      //[START snippet]
       String cleanBucketName = bucketName.replaceAll("/$", "");
       String URI = GCS_URI + cleanBucketName;
       HttpRequestFactory requestFactory = HTTP_TRANSPORT.createRequestFactory(credential);
@@ -71,6 +72,7 @@ public class StorageSample extends HttpServlet {
       HttpRequest request = requestFactory.buildGetRequest(url);
       HttpResponse response = request.execute();
       String content = response.parseAsString();
+      //[END snippet]
 
       // Display the output XML.
       resp.setContentType("text/xml");
