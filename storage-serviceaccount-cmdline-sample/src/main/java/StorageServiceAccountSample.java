@@ -1,3 +1,4 @@
+//[START all]
 /*
  * Copyright (c) 2014 Google Inc.
  * 
@@ -73,7 +74,7 @@ public class StorageServiceAccountSample {
         String p12Content = Files.readFirstLine(new File("key.p12"), Charset.defaultCharset());
         Preconditions.checkArgument(!p12Content.startsWith("Please"), p12Content);
 
-        //[START all]
+        //[START snippet]
         // Build service account credential.
         GoogleCredential credential = new GoogleCredential.Builder().setTransport(httpTransport)
             .setJsonFactory(JSON_FACTORY)
@@ -89,7 +90,7 @@ public class StorageServiceAccountSample {
         HttpRequest request = requestFactory.buildGetRequest(url);
         HttpResponse response = request.execute();
         String content = response.parseAsString();
-       //[END all]
+       //[END snippet]
 
         // Instantiate transformer input
         Source xmlInput = new StreamSource(new StringReader(content));
@@ -118,3 +119,4 @@ public class StorageServiceAccountSample {
     System.exit(1);
   }
 }
+//[END all]
