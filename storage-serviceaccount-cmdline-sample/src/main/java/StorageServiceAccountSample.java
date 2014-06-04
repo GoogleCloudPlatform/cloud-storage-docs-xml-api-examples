@@ -1,4 +1,3 @@
-//[START all]
 /*
  * Copyright (c) 2014 Google Inc.
  * 
@@ -119,4 +118,3 @@ public class StorageServiceAccountSample {
     System.exit(1);
   }
 }
-//[END all]
