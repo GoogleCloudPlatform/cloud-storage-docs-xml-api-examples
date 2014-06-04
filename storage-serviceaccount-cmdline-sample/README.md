@@ -59,11 +59,11 @@ to work with GitHub repositories.
 * Create a new project using `storage-serviceaccount-cmdline-sample`
 
     * Create a new Java Project.
-    * Choose the Location of the project to be the root directory of the sample.
+    * Choose the **Location** of the project to be the root directory of the sample you cloned locally.
     * Make sure the Eclipse package name matches the package name used in the
 code file `com.google.api.services.samples.storage.serviceaccount.cmdline`.
-    * Select the project and Convert to Maven Project to add Maven Dependencies.
-    * Edit StorageServiceAccountSample.java and specify your SERVICE_ACCOUNT_EMAIL and
+    * Select the project and **Convert to Maven Project** to add Maven Dependencies.
+    * Edit `StorageServiceAccountSample.java` and specify your SERVICE_ACCOUNT_EMAIL and
 BUCKET_NAME.
     * Update the key.p12 file.
 
