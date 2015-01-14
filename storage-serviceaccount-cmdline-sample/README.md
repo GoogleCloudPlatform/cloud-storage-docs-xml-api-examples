@@ -4,7 +4,7 @@ Using the Service Account Command Line Sample
 Browse Online
 --------------
 
-The main file is [StorageServiceAccountSample.java](https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples/blob/master/java-example/src/main/java/StorageServiceAccountSample.java).
+The main file is [StorageServiceAccountSample.java](https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples/blob/master/storage-serviceaccount-cmdline-sample/src/main/java/StorageServiceAccountSample.java).
 
 Get a Service Account
 ---------------------
