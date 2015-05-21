@@ -27,7 +27,6 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.Preconditions;
 import com.google.common.io.Files;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -43,9 +42,6 @@ import javax.xml.transform.stream.StreamSource;
 
 public class StorageServiceAccountSample {
 
-  /** E-mail address of the service account. */
-  private static final String SERVICE_ACCOUNT_EMAIL = "[[INSERT_SERVICE_ACCOUNT_EMAIL_HERE]]";
-
   /** Bucket to list. */
   private static final String BUCKET_NAME = "[[INSERT_YOUR_BUCKET_NAME_HERE]]";
 
@@ -56,32 +52,20 @@ public class StorageServiceAccountSample {
   /** Global instance of the HTTP transport. */
   private static HttpTransport httpTransport;
 
-  /** Global instance of the JSON factory. */
-  private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-
   public static void main(String[] args) {
     try {
       try {
         httpTransport = GoogleNetHttpTransport.newTrustedTransport();
         // Check for valid setup.
-        Preconditions.checkArgument(!SERVICE_ACCOUNT_EMAIL.startsWith("[["),
-            "Please enter your service account e-mail from the Google APIs "
-            + "Console to the SERVICE_ACCOUNT_EMAIL constant in %s",
-            StorageServiceAccountSample.class.getName());
         Preconditions.checkArgument(!BUCKET_NAME.startsWith("[["),
             "Please enter your desired Google Cloud Storage bucket name "
-            + "to the BUCKET_NAME constant in %s", StorageServiceAccountSample.class.getName());
-        String p12Content = Files.readFirstLine(new File("key.p12"), Charset.defaultCharset());
-        Preconditions.checkArgument(!p12Content.startsWith("Please"), p12Content);
+            + "to the BUCKET_NAME constant in "
+            + StorageServiceAccountSample.class.getName());
 
         //[START snippet]
         // Build a service account credential.
-        GoogleCredential credential = new GoogleCredential.Builder().setTransport(httpTransport)
-            .setJsonFactory(JSON_FACTORY)
-            .setServiceAccountId(SERVICE_ACCOUNT_EMAIL)
-            .setServiceAccountScopes(Collections.singleton(STORAGE_SCOPE))
-            .setServiceAccountPrivateKeyFromP12File(new File("key.p12"))
-            .build();
+        GoogleCredential credential = GoogleCredential.getApplicationDefault()
+            .createScoped(Collections.singleton(STORAGE_SCOPE));
 
         // Set up and execute a Google Cloud Storage request.
         String URI = "https://storage.googleapis.com/" + BUCKET_NAME;
