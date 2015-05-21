@@ -26,28 +26,28 @@ You may need to set your `JAVA_HOME`.
         git clone https://github.com/GoogleCloudPlatform/cloud-storage-docs-xml-api-examples.git
         cd cloud-storage-docs-xml-api-examples/storage-serviceaccount-cmdline-sample
 
-2. Update key.p12 file.
-3. Edit `StorageServiceAccountSample.java` to add your bucket and service account email.
+2. Update key.json file.
+3. Edit `StorageServiceAccountSample.java` to add your bucket.
 4. Compile and run
 
         mvn compile install
-        mvn -q exec:java
+        GOOGLE_APPLICATION_CREDENTIALS=key.json mvn -q exec:java
 
 
-To enable logging of HTTP requests and responses (highly recommended when 
+To enable logging of HTTP requests and responses (highly recommended when
 developing), please take a look at logging.properties.
 
 Set Up a Project in Eclipse
 ---------------------------
 
-**Prerequisites:** install [Eclipse](http://www.eclipse.org/downloads/), the [Maven plugin](http://m2eclipse.sonatype.org/installing-m2eclipse.html), and optionally the 
+**Prerequisites:** install [Eclipse](http://www.eclipse.org/downloads/), the [Maven plugin](http://eclipse.org/m2e/), and optionally the
 [GitHub plugin](http://eclipse.github.com/).
 
 * Set up Eclipse Preferences
 
     * Window > Preferences... (or on Mac, Eclipse > Preferences...)
     * Select Maven
-        
+
         * check on "Download Artifact Sources"
         * check on "Download Artifact JavaDoc"
 
@@ -63,12 +63,13 @@ to work with GitHub repositories.
     * Make sure the Eclipse package name matches the package name used in the
 code file `com.google.api.services.samples.storage.serviceaccount.cmdline`.
     * Select the project and **Convert to Maven Project** to add Maven Dependencies.
-    * Edit `StorageServiceAccountSample.java` and specify your SERVICE_ACCOUNT_EMAIL and
-BUCKET_NAME.
-    * Update the key.p12 file.
+    * Edit `StorageServiceAccountSample.java` and specify your BUCKET_NAME.
+    * Update the key.json file.
+    * Right-click on project > Run As > Run configurations
+        * Navigate to the **Java Application** configuration's **Environment** tab
+        * Create the environment variable `GOOGLE_APPLICATION_CREDENTIALS` and set it to `key.json`
 
 * Run
 
-    * Right-click on project
-    * Run As > Java Application
+    * Right-click on project > Run As > Java Application
     * If asked, type "StorageServiceAccountSample" and click OK
