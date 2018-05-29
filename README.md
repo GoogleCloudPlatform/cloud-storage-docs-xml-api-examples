@@ -1,3 +1,7 @@
+![status: inactive](https://img.shields.io/badge/status-inactive-red.svg)
+
+This project is no longer actively developed or maintained. For new work on this check out the [XML API Java samples](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/storage/xml-api) and the [XML API documentation](https://cloud.google.com/storage/docs/xml-api/overview).
+
 cloud-storage-docs-xml-api-examples
 ===================================
 
